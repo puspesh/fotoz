@@ -13,7 +13,7 @@ async function WebsiteLayout({ children }: WebsiteLayoutProps) {
       {/* @ts-expect-error Server Component */}
       <Header items={websiteNavConfig.mainNav} />
 
-      <main className="flex-1 items-center justify-center px-20 text-center">
+      <main className="container flex-1 items-center justify-center text-center">
         {children}
       </main>
 
