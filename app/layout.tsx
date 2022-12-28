@@ -1,10 +1,11 @@
+import { Inter as FotoSans } from "@next/font/google"
+
 import "@/styles/globals.css"
 
 import { cn } from "@/lib/utils"
-import { Inter } from "@next/font/google"
 import { Analytics } from "@/components/common/Analytics"
 
-const inter = Inter({
+const inter = FotoSans({
   subsets: ["latin"],
   variable: "--font-inter",
 })
@@ -25,7 +26,7 @@ export default function RootLayout({
       )}
     >
       <head />
-      <body className="min-h-screen isolate">
+      <body className="min-h-screen">
         {children}
         <Analytics />
       </body>

@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import Hero from "@/components/home/Hero"
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Hero />
@@ -59,4 +59,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage

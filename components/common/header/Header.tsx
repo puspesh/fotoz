@@ -16,61 +16,48 @@ async function Header({ items, children }: HeaderProps) {
   const session = await getSession()
 
   return (
-    <>
-      <Logo />
+    <header className="container sticky top-0 z-40 bg-white">
+      <div className="flex h-16 border-b items-center justify-between border-b-slate-200 py-4 px-6">
+        <Logo />
 
-      <div className="px-6 pt-6 lg:px-8">
+        <div className="px-4" aria-label="Global">
+          {items?.length ? (
+            <nav className="hidden md:flex gap-6">
+              {items?.map((item: MainNavItem, index) => (
+                <Link
+                  key={index}
+                  href={item.disabled ? "#" : item.href}
+                  className={cn(
+                    "flex items-center text-lg font-semibold text-slate-600 sm:text-sm",
+                    item.disabled && "cursor-not-allowed opacity-80"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          ) : null}
+
+          <MobileNavMenu items={items} session={session} />
+        </div>
         <nav
-          className="flex h-9 items-center justify-between"
+          className="hidden md:flex md:min-w-0 md:flex-1 md:justify-end md:gap-2"
           aria-label="Global"
         >
-          <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Fotoz</span>
-              <img
-                className="h-8"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </a>
-          </div>
-
           {session?.user ? (
-            <>
-              <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end lg:gap-x-12 lg:px-4">
-                {items?.map((item: MainNavItem, index) => (
-                  <Link
-                    key={index}
-                    href={item.disabled ? "#" : item.href}
-                    className={cn(
-                      "flex items-center text-lg font-semibold text-slate-600 sm:text-sm",
-
-                      item.disabled && "cursor-not-allowed opacity-80"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              <LogoutBtn />
-            </>
+            <LogoutBtn user={session.user} />
           ) : (
-            <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-              <a
-                href="/login"
-                className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-              >
-                Login
-              </a>
-            </div>
+            <Link
+              href="/login"
+              className="relative inline-flex h-8 items-center rounded-md border border-transparent bg-brand-500 px-6 py-1 text-sm font-medium text-white hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+            >
+              Login
+            </Link>
           )}
-
-          <MobileNavMenu items={items} />
-
-          {children}
         </nav>
       </div>
-    </>
+      {children}
+    </header>
   )
 }
 

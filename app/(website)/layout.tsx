@@ -9,18 +9,16 @@ interface WebsiteLayoutProps {
 
 async function WebsiteLayout({ children }: WebsiteLayoutProps) {
   return (
-    <>
+    <div className="flex flex-col isolate min-h-screen">
       {/* @ts-expect-error Server Component */}
       <Header items={websiteNavConfig.mainNav} />
 
-      <div className="flex min-h-screen flex-col items-center justify-center py-2">
-        <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-          {children}
-        </main>
-      </div>
+      <main className="flex-1 items-center justify-center px-20 text-center">
+        {children}
+      </main>
 
       <Footer />
-    </>
+    </div>
   )
 }
 
