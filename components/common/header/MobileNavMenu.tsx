@@ -4,8 +4,9 @@ import { Fragment, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import { MainNavItem } from "@/types"
+import { MainNavItem } from "types"
 import LogoutBtn from "./LogoutBtn"
+import { Session } from "next-auth"
 
 interface MobileHeaderProps {
   items?: MainNavItem[]

@@ -2,9 +2,10 @@
 
 import React from "react"
 import { signOut } from "next-auth/react"
+import { User } from "next-auth"
 
 interface LogoutBtnProps {
-  user?: Session.User
+  user?: User
   children?: React.ReactNode
 }
 

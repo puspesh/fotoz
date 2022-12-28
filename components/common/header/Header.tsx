@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { getSession } from "@/lib/session"
-import { MainNavItem } from "@/types"
+import { MainNavItem } from "types"
 import Logo from "@/components/common/Logo"
 import MobileNavMenu from "./MobileNavMenu"
 import LogoutBtn from "./LogoutBtn"

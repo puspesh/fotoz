@@ -22,8 +22,7 @@
       "@/lib/*": ["lib/*"],
       "@/config/*": ["config/*"],
       "@/styles/*": ["styles/*"],
-      "@/prisma/*": ["prisma/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "@/prisma/*": ["prisma/*"]
     },
     "plugins": [
       {
