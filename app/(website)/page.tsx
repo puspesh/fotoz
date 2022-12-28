@@ -4,7 +4,7 @@ import Hero from "@/components/home/Hero"
 
 const HomePage = () => {
   return (
-    <>
+    <div className="relative px-6 lg:px-8">
       <Hero />
 
       <p className="mt-3 text-2xl">
@@ -55,7 +55,7 @@ const HomePage = () => {
           </p>
         </a>
       </div>
-    </>
+    </div>
   )
 }
 

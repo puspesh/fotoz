@@ -1,32 +1,25 @@
-"use client"
+import Link from "next/link"
 
-import { useSearchParams } from "next/navigation"
+import LoginForm from "./LoginForm"
+import { ArrowLeftIcon } from "@heroicons/react/24/outline"
 
-import LoginForm from "@/app/(auth)/login/LoginForm"
-import { CheckBadgeIcon } from "@heroicons/react/24/outline"
-
-function Login() {
-  const searchParams = useSearchParams()
-
+function LoginPage() {
   return (
-    <>
-      <div className="flex flex-1 justify-center">
-        {searchParams.get("verifyRequest") ? (
-          <div className="align-center mx-4 md:mx-0">
-            <h1>
-              Check your email{" "}
-              <CheckBadgeIcon className="h-6 w-6" aria-hidden="true" />
-            </h1>
-            <p className="mx-3">
-              A <b>sign in link</b> has been sent to your email address.
-            </p>
-          </div>
-        ) : (
-          <LoginForm />
-        )}
+    <div className="container flex h-screen w-screen flex-col items-center justify-center">
+      <Link
+        href="/"
+        className="absolute top-4 left-4 inline-flex items-center justify-center rounded-lg border border-transparent bg-transparent py-2 px-3 text-center text-sm  font-medium text-slate-900 hover:border-slate-200 hover:bg-slate-100 focus:z-10 focus:outline-none focus:ring-4 focus:ring-slate-200 md:top-8 md:left-8"
+      >
+        <>
+          <ArrowLeftIcon className="mr-2 h-4 w-4" />
+          Back
+        </>
+      </Link>
+      <div className="mx-auto flex w-full flex-col justify-center px-4 space-y-4 sm:w-[400px]">
+        <LoginForm />
       </div>
-    </>
+    </div>
   )
 }
 
-export default Login
+export default LoginPage

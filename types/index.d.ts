@@ -1,34 +1,35 @@
-import { Icons } from "@/components/icons";
-import { User } from "@prisma/client";
+import { Icons } from "@/components/icons"
+import { User } from "@prisma/client"
 
 export type NavItem = {
-  name: string;
-  href: string;
-  disabled?: boolean;
-};
+  name: string
+  href: string
+  disabled?: boolean
+  loginReqd?: boolean
+}
 
-export type MainNavItem = NavItem;
+export type MainNavItem = NavItem
 
 export type SidebarNavItem = {
-  name: string;
-  disabled?: boolean;
-  external?: boolean;
-  icon?: keyof typeof Icons;
+  name: string
+  disabled?: boolean
+  external?: boolean
+  icon?: keyof typeof Icons
 } & (
   | {
-      href: string;
-      items?: never;
+      href: string
+      items?: never
     }
   | {
-      href?: string;
-      items: NavLink[];
+      href?: string
+      items: NavLink[]
     }
-);
+)
 
 export type SiteConfig = {
-  name: string;
+  name: string
   links: {
-    twitter: string;
-    github: string;
-  };
-};
+    twitter: string
+    github: string
+  }
+}

@@ -29,6 +29,9 @@ async function Header({ items, children }: HeaderProps) {
                   href={item.disabled ? "#" : item.href}
                   className={cn(
                     "flex items-center text-lg font-semibold text-slate-600 sm:text-sm",
+                    item.loginReqd &&
+                      !session?.user &&
+                      "cursor-not-allowed opacity-80",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >

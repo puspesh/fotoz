@@ -1,8 +1,8 @@
 {
   "mainNav": [
-    { "name": "Dashboard", "href": "/dashboard", "disabled": true },
-    { "name": "Gallery", "href": "/gallery", "disabled": true },
+    { "name": "Dashboard", "href": "/dashboard", "loginReqd": true },
+    { "name": "Gallery", "href": "/gallery", "loginReqd": true },
     { "name": "About Us", "href": "/about" },
-    { "name": "Blog", "href": "/blog" }
+    { "name": "Blog", "href": "/blog", "disabled": true }
   ]
 }
