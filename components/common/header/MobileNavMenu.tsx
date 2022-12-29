@@ -7,6 +7,7 @@ import Link from "next/link"
 import { MainNavItem } from "types"
 import LogoutBtn from "./LogoutBtn"
 import { Session } from "next-auth"
+import { getSiteName } from "@/lib/utils"
 
 interface MobileHeaderProps {
   items?: MainNavItem[]
@@ -53,11 +54,11 @@ function MobileNavMenu({ items, session, children }: MobileHeaderProps) {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 lg:hidden">
+            <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-10 lg:hidden">
               <div className="flex h-16 items-center justify-between">
                 <div className="flex">
                   <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">Fotoz</span>
+                    <span className="sr-only">{getSiteName()}</span>
                     <img
                       className="h-8"
                       src="https://tailwindui.com/img/logos/mark.svg?color=black&shade=600"

@@ -17,7 +17,7 @@ async function Header({ items, children }: HeaderProps) {
 
   return (
     <header className="container sticky top-0 z-40 bg-white">
-      <div className="flex h-16 border-b items-center justify-between border-b-slate-700 py-4 px-6">
+      <div className="flex h-16 border-b items-center justify-between border-b-slate-700 py-4 px-10 sm:px-20">
         <Logo />
 
         <div className="px-4" aria-label="Global">

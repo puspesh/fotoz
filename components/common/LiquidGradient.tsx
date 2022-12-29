@@ -3,7 +3,7 @@ import React from "react"
 function LiquidGradient() {
   return (
     <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
-      <svg
+      {/* <svg
         className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
         viewBox="0 0 1155 678"
         fill="none"
@@ -27,7 +27,7 @@ function LiquidGradient() {
             <stop offset={1} stopColor="#484848" />
           </linearGradient>
         </defs>
-      </svg>
+      </svg> */}
     </div>
   )
 }

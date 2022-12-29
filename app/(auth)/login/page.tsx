@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import LoginForm from "./LoginForm"
+import LoginForm from "../LoginForm"
 import { ArrowLeftIcon } from "@heroicons/react/24/outline"
 
 function LoginPage() {

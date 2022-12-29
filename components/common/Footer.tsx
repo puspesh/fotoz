@@ -2,29 +2,32 @@ import React from "react"
 import Logo from "./Logo"
 import Link from "next/link"
 
+import { getSiteName } from "@/lib/utils"
+
 function Footer() {
   return (
-    <footer className="container mt-12">
-      <div className="flex items-start space-y-6 justify-between pb-4 border-t border-t-slate-700 border-b border-b-slate-200 px-4">
-        <div className="mt-6">
+    <footer className="container mt-12 bg-brand-50">
+      <div className="flex flex-col sm:flex-row justify-start items-start space-x-0 sm:space-x-12 space-y-12 sm:space-y-0 border-t border-t-slate-700 border-b border-b-slate-200 px-10 sm:px-20 py-12">
+        <div>
           <Logo />
         </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:gap-6 sm:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-6">
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-              Resources
-            </h2>
-            <ul className="text-gray-600 ">
-              <li className="mb-4">
-                <Link href="https://fotoz.app/" className="hover:underline">
-                  Fotoz
+            <h2 className="mb-4 text-sm text-brand-300">Resources</h2>
+            <ul className="grid grid-cols-1 gap-2">
+              <li>
+                <Link
+                  href="https://fotoz.app/"
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
+                >
+                  {getSiteName()}
                 </Link>
               </li>
               <li>
                 <Link
                   href="https://tailwindcss.com/"
-                  className="hover:underline"
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
                 >
                   Tailwind CSS
                 </Link>
@@ -32,14 +35,12 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-              Follow us
-            </h2>
-            <ul className="text-gray-600">
-              <li className="mb-4">
+            <h2 className="mb-4 text-sm text-brand-300">Follow us</h2>
+            <ul className="grid grid-cols-1 text-brand-400 gap-2">
+              <li>
                 <Link
                   href="https://github.com/puspesh/fotoz"
-                  className="hover:underline "
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
                 >
                   Github
                 </Link>
@@ -47,7 +48,7 @@ function Footer() {
               <li>
                 <Link
                   href="https://discord.gg/4eeurUVvTy"
-                  className="hover:underline"
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
                 >
                   Discord
                 </Link>
@@ -55,17 +56,21 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
-              Legal
-            </h2>
-            <ul className="text-gray-600">
-              <li className="mb-4">
-                <Link href="#" className="hover:underline">
+            <h2 className="mb-4 text-sm text-brand-300">Legal</h2>
+            <ul className="grid grid-cols-1 text-brand-400 gap-2">
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:underline">
+                <Link
+                  href="#"
+                  className="text-sm hover:underline text-brand-400 hover:text-brand-500"
+                >
                   Terms &amp; Conditions
                 </Link>
               </li>
@@ -73,11 +78,14 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between p-4">
-        <span className="text-sm text-gray-500 sm:text-center">
+      <div className="flex items-center justify-between px-20 py-4">
+        <span className="text-xs text-gray-400 sm:text-center">
           © 2022{" "}
-          <Link href="https://fotoz.app/" className="hover:underline">
-            Fotoz™
+          <Link
+            href="https://fotoz.app/"
+            className="text-xs hover:underline text-brand-300 hover:text-brand-400"
+          >
+            {getSiteName()}™
           </Link>
           . All Rights Reserved.
         </span>
