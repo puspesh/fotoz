@@ -5,4 +5,7 @@ module.exports = {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
   },
+  env: {
+    BASE_URL: "http://localhost:3000",
+  },
 }
